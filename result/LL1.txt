@@ -1,0 +1,447 @@
+
+步骤0	当前分析栈:S#	余留符号串：voidmain(){inti=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:S->void main (){A}
+
+步骤1	当前分析栈:voidmain(){A}#	余留符号串：voidmain(){inti=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤2	当前分析栈:main(){A}#	余留符号串：main(){inti=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤3	当前分析栈:(){A}#	余留符号串：(){inti=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤4	当前分析栈:){A}#	余留符号串：){inti=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤5	当前分析栈:{A}#	余留符号串：{inti=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤6	当前分析栈:A}#	余留符号串：inti=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:A->CA
+
+步骤7	当前分析栈:CA}#	余留符号串：inti=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:C->XBR
+
+步骤8	当前分析栈:XBRA}#	余留符号串：inti=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:X->YZ;
+
+步骤9	当前分析栈:YZ;BRA}#	余留符号串：inti=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:Y->int
+
+步骤10	当前分析栈:intZ;BRA}#	余留符号串：inti=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤11	当前分析栈:Z;BRA}#	余留符号串：i=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:Z->UZ'
+
+步骤12	当前分析栈:UZ';BRA}#	余留符号串：i=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:U->@ASS_U id U'
+
+步骤13	当前分析栈:@ASS_UidU'Z';BRA}#	余留符号串：i=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤14	当前分析栈:idU'Z';BRA}#	余留符号串：i=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:空
+
+步骤15	当前分析栈:U'Z';BRA}#	余留符号串：=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:U'->=L EQ
+
+步骤16	当前分析栈:=L@EQZ';BRA}#	余留符号串：=0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:空
+
+步骤17	当前分析栈:L@EQZ';BRA}#	余留符号串：0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:L->TL' @ADD_SUB
+
+步骤18	当前分析栈:TL'@ADD_SUB@EQZ';BRA}#	余留符号串：0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:T-> FT' @DIV_MUL
+
+步骤19	当前分析栈:FT'@DIV_MULL'@ADD_SUB@EQZ';BRA}#	余留符号串：0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:F-> @ASS num
+
+步骤20	当前分析栈:@ASSnumT'@DIV_MULL'@ADD_SUB@EQZ';BRA}#	余留符号串：0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:空
+
+步骤21	当前分析栈:numT'@DIV_MULL'@ADD_SUB@EQZ';BRA}#	余留符号串：0,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0i#
+	推导所用产生式:空
+
+步骤22	当前分析栈:T'@DIV_MULL'@ADD_SUB@EQZ';BRA}#	余留符号串：,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0i#
+	推导所用产生式:T'->ε
+
+步骤23	当前分析栈:@DIV_MULL'@ADD_SUB@EQZ';BRA}#	余留符号串：,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0i#
+	推导所用产生式:空
+
+步骤24	当前分析栈:L'@ADD_SUB@EQZ';BRA}#	余留符号串：,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0i#
+	推导所用产生式:L'->ε
+
+步骤25	当前分析栈:@ADD_SUB@EQZ';BRA}#	余留符号串：,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0i#
+	推导所用产生式:空
+
+步骤26	当前分析栈:@EQZ';BRA}#	余留符号串：,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0i#
+	推导所用产生式:空
+
+步骤27	当前分析栈:Z';BRA}#	余留符号串：,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:Z'->,Z
+
+步骤28	当前分析栈:,Z;BRA}#	余留符号串：,sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤29	当前分析栈:Z;BRA}#	余留符号串：sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:Z->UZ'
+
+步骤30	当前分析栈:UZ';BRA}#	余留符号串：sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:U->@ASS_U id U'
+
+步骤31	当前分析栈:@ASS_UidU'Z';BRA}#	余留符号串：sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤32	当前分析栈:idU'Z';BRA}#	余留符号串：sum=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:空
+
+步骤33	当前分析栈:U'Z';BRA}#	余留符号串：=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:U'->=L EQ
+
+步骤34	当前分析栈:=L@EQZ';BRA}#	余留符号串：=0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:空
+
+步骤35	当前分析栈:L@EQZ';BRA}#	余留符号串：0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:L->TL' @ADD_SUB
+
+步骤36	当前分析栈:TL'@ADD_SUB@EQZ';BRA}#	余留符号串：0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:T-> FT' @DIV_MUL
+
+步骤37	当前分析栈:FT'@DIV_MULL'@ADD_SUB@EQZ';BRA}#	余留符号串：0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:F-> @ASS num
+
+步骤38	当前分析栈:@ASSnumT'@DIV_MULL'@ADD_SUB@EQZ';BRA}#	余留符号串：0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:空
+
+步骤39	当前分析栈:numT'@DIV_MULL'@ADD_SUB@EQZ';BRA}#	余留符号串：0;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0sum#
+	推导所用产生式:空
+
+步骤40	当前分析栈:T'@DIV_MULL'@ADD_SUB@EQZ';BRA}#	余留符号串：;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0sum#
+	推导所用产生式:T'->ε
+
+步骤41	当前分析栈:@DIV_MULL'@ADD_SUB@EQZ';BRA}#	余留符号串：;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0sum#
+	推导所用产生式:空
+
+步骤42	当前分析栈:L'@ADD_SUB@EQZ';BRA}#	余留符号串：;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0sum#
+	推导所用产生式:L'->ε
+
+步骤43	当前分析栈:@ADD_SUB@EQZ';BRA}#	余留符号串：;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0sum#
+	推导所用产生式:空
+
+步骤44	当前分析栈:@EQZ';BRA}#	余留符号串：;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:0sum#
+	推导所用产生式:空
+
+步骤45	当前分析栈:Z';BRA}#	余留符号串：;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:Z'->ε
+
+步骤46	当前分析栈:;BRA}#	余留符号串：;while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤47	当前分析栈:BRA}#	余留符号串：while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:B->while(G) WHILE_FJ{A} WHILE_RJ WHILE_BACKPATCH_FJ
+
+步骤48	当前分析栈:while(G)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：while(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤49	当前分析栈:(G)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：(i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤50	当前分析栈:G)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:G->FDF @COMPARE
+
+步骤51	当前分析栈:FDF@COMPARE)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:F-> @ASS id
+
+步骤52	当前分析栈:@ASSidDF@COMPARE)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤53	当前分析栈:idDF@COMPARE)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:空
+
+步骤54	当前分析栈:DF@COMPARE)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:D->@COMPARE_OP <=
+
+步骤55	当前分析栈:@COMPARE_OP<=F@COMPARE)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:空
+
+步骤56	当前分析栈:<=F@COMPARE)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：<=10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:<=i#
+	推导所用产生式:空
+
+步骤57	当前分析栈:F@COMPARE)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:<=i#
+	推导所用产生式:F-> @ASS num
+
+步骤58	当前分析栈:@ASSnum@COMPARE)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:<=i#
+	推导所用产生式:空
+
+步骤59	当前分析栈:num@COMPARE)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：10){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:10<=i#
+	推导所用产生式:空
+
+步骤60	当前分析栈:@COMPARE)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:10<=i#
+	推导所用产生式:空
+
+步骤61	当前分析栈:)@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：){sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:T1#
+	推导所用产生式:空
+
+步骤62	当前分析栈:@WHILE_FJ{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：{sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:T1#
+	推导所用产生式:空
+
+步骤63	当前分析栈:{A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：{sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤64	当前分析栈:A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:A->CA
+
+步骤65	当前分析栈:CA}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:C->XBR
+
+步骤66	当前分析栈:XBRA}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:X->ε
+
+步骤67	当前分析栈:BRA}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:B->ε
+
+步骤68	当前分析栈:RA}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:R->@ASS id = L EQ;
+
+步骤69	当前分析栈:@ASSid=L@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤70	当前分析栈:id=L@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:空
+
+步骤71	当前分析栈:=L@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：=sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:空
+
+步骤72	当前分析栈:L@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:L->TL' @ADD_SUB
+
+步骤73	当前分析栈:TL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:T-> FT' @DIV_MUL
+
+步骤74	当前分析栈:FT'@DIV_MULL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:F-> @ASS id
+
+步骤75	当前分析栈:@ASSidT'@DIV_MULL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sum#
+	推导所用产生式:空
+
+步骤76	当前分析栈:idT'@DIV_MULL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：sum+i;i=i+1;}printf("%d",sum);}#	语义栈:sumsum#
+	推导所用产生式:空
+
+步骤77	当前分析栈:T'@DIV_MULL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：+i;i=i+1;}printf("%d",sum);}#	语义栈:sumsum#
+	推导所用产生式:T'->ε
+
+步骤78	当前分析栈:@DIV_MULL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：+i;i=i+1;}printf("%d",sum);}#	语义栈:sumsum#
+	推导所用产生式:空
+
+步骤79	当前分析栈:L'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：+i;i=i+1;}printf("%d",sum);}#	语义栈:sumsum#
+	推导所用产生式:L'-> +L ADD
+
+步骤80	当前分析栈:+L@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：+i;i=i+1;}printf("%d",sum);}#	语义栈:sumsum#
+	推导所用产生式:空
+
+步骤81	当前分析栈:L@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i;i=i+1;}printf("%d",sum);}#	语义栈:sumsum#
+	推导所用产生式:L->TL' @ADD_SUB
+
+步骤82	当前分析栈:TL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i;i=i+1;}printf("%d",sum);}#	语义栈:sumsum#
+	推导所用产生式:T-> FT' @DIV_MUL
+
+步骤83	当前分析栈:FT'@DIV_MULL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i;i=i+1;}printf("%d",sum);}#	语义栈:sumsum#
+	推导所用产生式:F-> @ASS id
+
+步骤84	当前分析栈:@ASSidT'@DIV_MULL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i;i=i+1;}printf("%d",sum);}#	语义栈:sumsum#
+	推导所用产生式:空
+
+步骤85	当前分析栈:idT'@DIV_MULL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i;i=i+1;}printf("%d",sum);}#	语义栈:isumsum#
+	推导所用产生式:空
+
+步骤86	当前分析栈:T'@DIV_MULL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;i=i+1;}printf("%d",sum);}#	语义栈:isumsum#
+	推导所用产生式:T'->ε
+
+步骤87	当前分析栈:@DIV_MULL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;i=i+1;}printf("%d",sum);}#	语义栈:isumsum#
+	推导所用产生式:空
+
+步骤88	当前分析栈:L'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;i=i+1;}printf("%d",sum);}#	语义栈:isumsum#
+	推导所用产生式:L'->ε
+
+步骤89	当前分析栈:@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;i=i+1;}printf("%d",sum);}#	语义栈:isumsum#
+	推导所用产生式:空
+
+步骤90	当前分析栈:@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;i=i+1;}printf("%d",sum);}#	语义栈:isumsum#
+	推导所用产生式:空
+
+步骤91	当前分析栈:@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;i=i+1;}printf("%d",sum);}#	语义栈:isumsum#
+	推导所用产生式:空
+
+步骤92	当前分析栈:@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;i=i+1;}printf("%d",sum);}#	语义栈:T2sum#
+	推导所用产生式:空
+
+步骤93	当前分析栈:;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤94	当前分析栈:A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:A->CA
+
+步骤95	当前分析栈:CA}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:C->XBR
+
+步骤96	当前分析栈:XBRA}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:X->ε
+
+步骤97	当前分析栈:BRA}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:B->ε
+
+步骤98	当前分析栈:RA}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:R->@ASS id = L EQ;
+
+步骤99	当前分析栈:@ASSid=L@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i=i+1;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤100	当前分析栈:id=L@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:空
+
+步骤101	当前分析栈:=L@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：=i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:空
+
+步骤102	当前分析栈:L@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:L->TL' @ADD_SUB
+
+步骤103	当前分析栈:TL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:T-> FT' @DIV_MUL
+
+步骤104	当前分析栈:FT'@DIV_MULL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:F-> @ASS id
+
+步骤105	当前分析栈:@ASSidT'@DIV_MULL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i+1;}printf("%d",sum);}#	语义栈:i#
+	推导所用产生式:空
+
+步骤106	当前分析栈:idT'@DIV_MULL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：i+1;}printf("%d",sum);}#	语义栈:ii#
+	推导所用产生式:空
+
+步骤107	当前分析栈:T'@DIV_MULL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：+1;}printf("%d",sum);}#	语义栈:ii#
+	推导所用产生式:T'->ε
+
+步骤108	当前分析栈:@DIV_MULL'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：+1;}printf("%d",sum);}#	语义栈:ii#
+	推导所用产生式:空
+
+步骤109	当前分析栈:L'@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：+1;}printf("%d",sum);}#	语义栈:ii#
+	推导所用产生式:L'-> +L ADD
+
+步骤110	当前分析栈:+L@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：+1;}printf("%d",sum);}#	语义栈:ii#
+	推导所用产生式:空
+
+步骤111	当前分析栈:L@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：1;}printf("%d",sum);}#	语义栈:ii#
+	推导所用产生式:L->TL' @ADD_SUB
+
+步骤112	当前分析栈:TL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：1;}printf("%d",sum);}#	语义栈:ii#
+	推导所用产生式:T-> FT' @DIV_MUL
+
+步骤113	当前分析栈:FT'@DIV_MULL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：1;}printf("%d",sum);}#	语义栈:ii#
+	推导所用产生式:F-> @ASS num
+
+步骤114	当前分析栈:@ASSnumT'@DIV_MULL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：1;}printf("%d",sum);}#	语义栈:ii#
+	推导所用产生式:空
+
+步骤115	当前分析栈:numT'@DIV_MULL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：1;}printf("%d",sum);}#	语义栈:1ii#
+	推导所用产生式:空
+
+步骤116	当前分析栈:T'@DIV_MULL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;}printf("%d",sum);}#	语义栈:1ii#
+	推导所用产生式:T'->ε
+
+步骤117	当前分析栈:@DIV_MULL'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;}printf("%d",sum);}#	语义栈:1ii#
+	推导所用产生式:空
+
+步骤118	当前分析栈:L'@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;}printf("%d",sum);}#	语义栈:1ii#
+	推导所用产生式:L'->ε
+
+步骤119	当前分析栈:@ADD_SUB@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;}printf("%d",sum);}#	语义栈:1ii#
+	推导所用产生式:空
+
+步骤120	当前分析栈:@ADD@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;}printf("%d",sum);}#	语义栈:1ii#
+	推导所用产生式:空
+
+步骤121	当前分析栈:@ADD_SUB@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;}printf("%d",sum);}#	语义栈:1ii#
+	推导所用产生式:空
+
+步骤122	当前分析栈:@EQ;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;}printf("%d",sum);}#	语义栈:T3i#
+	推导所用产生式:空
+
+步骤123	当前分析栈:;A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：;}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤124	当前分析栈:A}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:A->ε
+
+步骤125	当前分析栈:}@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：}printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤126	当前分析栈:@WHILE_RJ@WHILE_BACKPATCH_FJRA}#	余留符号串：printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤127	当前分析栈:@WHILE_BACKPATCH_FJRA}#	余留符号串：printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤128	当前分析栈:RA}#	余留符号串：printf("%d",sum);}#	语义栈:#
+	推导所用产生式:R->ε
+
+步骤129	当前分析栈:A}#	余留符号串：printf("%d",sum);}#	语义栈:#
+	推导所用产生式:A->CA
+
+步骤130	当前分析栈:CA}#	余留符号串：printf("%d",sum);}#	语义栈:#
+	推导所用产生式:C->XBR
+
+步骤131	当前分析栈:XBRA}#	余留符号串：printf("%d",sum);}#	语义栈:#
+	推导所用产生式:X->ε
+
+步骤132	当前分析栈:BRA}#	余留符号串：printf("%d",sum);}#	语义栈:#
+	推导所用产生式:B->printf ("%d",F) @PRINTF A
+
+步骤133	当前分析栈:printf("%d",F)@PRINTFA;RA}#	余留符号串：printf("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤134	当前分析栈:("%d",F)@PRINTFA;RA}#	余留符号串：("%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤135	当前分析栈:"%d",F)@PRINTFA;RA}#	余留符号串："%d",sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤136	当前分析栈:,F)@PRINTFA;RA}#	余留符号串：,sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤137	当前分析栈:F)@PRINTFA;RA}#	余留符号串：sum);}#	语义栈:#
+	推导所用产生式:F-> @ASS id
+
+步骤138	当前分析栈:@ASSid)@PRINTFA;RA}#	余留符号串：sum);}#	语义栈:#
+	推导所用产生式:空
+
+步骤139	当前分析栈:id)@PRINTFA;RA}#	余留符号串：sum);}#	语义栈:sum#
+	推导所用产生式:空
+
+步骤140	当前分析栈:)@PRINTFA;RA}#	余留符号串：);}#	语义栈:sum#
+	推导所用产生式:空
+
+步骤141	当前分析栈:@PRINTFA;RA}#	余留符号串：;}#	语义栈:sum#
+	推导所用产生式:空
+
+步骤142	当前分析栈:A;RA}#	余留符号串：;}#	语义栈:#
+	推导所用产生式:A->ε
+
+步骤143	当前分析栈:;RA}#	余留符号串：;}#	语义栈:#
+	推导所用产生式:空
+
+步骤144	当前分析栈:RA}#	余留符号串：}#	语义栈:#
+	推导所用产生式:R->ε
+
+步骤145	当前分析栈:A}#	余留符号串：}#	语义栈:#
+	推导所用产生式:A->ε
+
+步骤146	当前分析栈:}#	余留符号串：}#	语义栈:#
+	推导所用产生式:空
+
+步骤147	当前分析栈:#	余留符号串：#	语义栈:#
+
+	推导所用产生式:空
+
+语法分析通过！
